@@ -1,4 +1,3 @@
-from ast import arg
 from distutils.command.build_scripts import first_line_re
 from parse_scorecard import parse_batting, parse_bowling
 from tabulate import tabulate
@@ -68,11 +67,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument(
-        "-p", "--path", help="Path to the scorecard file. Defaults to `./example.json`")
+    parser.add_argument("path", help="Path to the scorecard file.")
 
     args = parser.parse_args()
 
-    path = args.path if args.path else "./example.json"
-
-    main(path)
+    main(args.path)
