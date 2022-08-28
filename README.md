@@ -49,18 +49,18 @@ The JSON file (containing the scorecard information) should adhere to the follow
 {
     "first_innings": {
         "batting": {
-            ...
+            "player_name": "player_information"
         },
         "bowling": {
-            ...
+            "player_name": "player_information"
         }
     },
     "second_innings": {
         "batting": {
-            ...
+            "player_name": "player_information"
         },
         "bowling": {
-            ...
+            "player_name": "player_information"
         }
     }
 }
