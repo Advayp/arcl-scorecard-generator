@@ -1,4 +1,10 @@
-def batting_map(char): return 0 if char in ['.', 'o'] else int(char)
+def batting_map(char):
+    if char in ['.', '0']:
+        return (0, True)
+    if char in 'r':
+        return (0, False)
+
+    return int(char), True
 
 
 def bowling_map(char):

@@ -29,9 +29,7 @@ For each ball in the ball-by-ball scorecard of a particular bowler or batsman, u
 | No Ball   | `n`       |
 | Wicket    | `o`       |
 | Bye       | `1`       |
-| Run-out\* | `.`, `0`  |
-
-\*_Note: a specific symbol for run-out still needs to be created_
+| Run-out   | `r`       |
 
 Then, after finding the correct symbol for a particular delivery, merge all the symbols together into one. Some examples are shown below.
 
@@ -126,4 +124,4 @@ Ronak          3           0        4      29          1   9.67
 
 # Todos
 
--   [ ] Add symbol for run-out
+-   [x] Add symbol for run-out

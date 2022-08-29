@@ -36,7 +36,7 @@ def parse_batting(s):
     fours = 0
     sixes = 0
     for char in s:
-        value = batting_map(char)
+        value, append_ball = batting_map(char)
 
         if value == 4:
             fours += 1
@@ -44,7 +44,9 @@ def parse_batting(s):
         if value == 6:
             sixes += 1
 
-        balls += 1
+        if append_ball:
+            balls += 1
+
         runs += value
 
     sr = round(100 * (runs / balls), 2)
