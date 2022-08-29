@@ -11,7 +11,7 @@ class BattingWrapper(object):
         self.sr = sr
 
     def as_array(self, name):
-        return [name, self.runs, self.balls, self.fours, self.sixes, f'{self.sr:.2f}']
+        return [name, self.runs, self.balls, self.fours, self.sixes, f'{self.sr:0.2f}']
 
 
 class BowlingWrapper(object):
@@ -27,7 +27,7 @@ class BowlingWrapper(object):
         self.remaining_balls = balls % 6
 
     def as_array(self, name):
-        return [name, f'{self.overs}.{self.remaining_balls}', self.no_balls, self.wides, self.runs, self.wickets, f'{self.eco:.2f}']
+        return [name, f'{self.overs}.{self.remaining_balls}', self.no_balls, self.wides, self.runs, self.wickets, f'{self.eco:0.2f}']
 
 
 def parse_batting(s):

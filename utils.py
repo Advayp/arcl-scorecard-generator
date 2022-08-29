@@ -1,5 +1,5 @@
 def batting_map(char):
-    if char in ['.', '0']:
+    if char in ['.', 'o']:
         return (0, True)
     if char in 'r':
         return (0, False)
