@@ -1,17 +1,18 @@
-from utils import batting_map, bowling_map, bowling_stats
+from utils import batting_map, bowling_map, bowling_stats, out_chars
 from math import floor
 
 
 class BattingWrapper(object):
-    def __init__(self, runs, balls, fours, sixes, sr) -> None:
+    def __init__(self, runs, balls, fours, sixes, sr, isOut) -> None:
         self.runs = runs
         self.balls = balls
         self.fours = fours
         self.sixes = sixes
         self.sr = sr
+        self.isOut = isOut
 
     def as_array(self, name):
-        return [name, self.runs, self.balls, self.fours, self.sixes, f'{self.sr:0.2f}']
+        return [name, f'{self.runs}{"" if self.isOut else "*"}', self.balls, self.fours, self.sixes, f'{self.sr:0.2f}']
 
 
 class BowlingWrapper(object):
@@ -35,7 +36,12 @@ def parse_batting(s):
     runs = 0
     fours = 0
     sixes = 0
+    isOut = False
     for char in s:
+
+        if char in out_chars:
+            isOut = True
+
         value, append_ball = batting_map(char)
 
         if value == 4:
@@ -51,7 +57,7 @@ def parse_batting(s):
 
     sr = round(100 * (runs / balls), 2)
 
-    return BattingWrapper(runs, balls, fours, sixes, sr)
+    return BattingWrapper(runs, balls, fours, sixes, sr, isOut)
 
 
 def parse_bowling(s):
