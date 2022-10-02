@@ -8,8 +8,8 @@ A simple script that generates the scorecard given the ball-by-ball information 
 
 ## Arguments
 
--   `path`: relative path to the JSON file containing the scorecard
--   `-h`: show help message
+- `path`: relative path to the JSON file containing the scorecard
+- `-h`: show help message
 
 # Formatting A Scorecard
 
@@ -45,22 +45,22 @@ The JSON file (containing the scorecard information) should adhere to the follow
 
 ```json
 {
-    "first_innings": {
-        "batting": {
-            "player_name": "player_information"
-        },
-        "bowling": {
-            "player_name": "player_information"
-        }
+  "first_innings": {
+    "batting": {
+      "player_name": "player_information"
     },
-    "second_innings": {
-        "batting": {
-            "player_name": "player_information"
-        },
-        "bowling": {
-            "player_name": "player_information"
-        }
+    "bowling": {
+      "player_name": "player_information"
     }
+  },
+  "second_innings": {
+    "batting": {
+      "player_name": "player_information"
+    },
+    "bowling": {
+      "player_name": "player_information"
+    }
+  }
 }
 ```
 
@@ -77,8 +77,8 @@ Name       Runs    Balls    4s    6s      SR
 -------  ------  -------  ----  ----  ------
 Aran          6       11     1     0   54.55
 Neal         43       39     2     2  110.26
-Advay        60       43     7     0  139.53
-Anirudh      11        3     1     1  366.67
+Advay        60*      43     7     0  139.53
+Anirudh      11*       3     1     1  366.67
 -----------------------------------------------------------------
 
 Bowling
@@ -104,9 +104,9 @@ Name        Runs    Balls    4s    6s      SR
 Vishank        6       10     0     0   60
 Adit           0        2     0     0    0
 Abhi           4        5     0     0   80
-Shubh          8       10     1     0   80
+Shubh          8*      10     1     0   80
 Krish         11        4     1     1  275
-Anirudh       21       32     2     0   65.62
+Anirudh       21*      32     2     0   65.62
 Harshith      16       16     1     0  100
 Thiru          0        1     0     0    0
 -----------------------------------------------------------------
@@ -124,4 +124,5 @@ Ronak          3           0        4      29          1   9.67
 
 # Todos
 
--   [x] Add symbol for run-out
+- [x] Add symbol for run-out
+- [x] Add symbol for not-outs
